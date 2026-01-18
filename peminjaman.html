@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Admin | Perpustakaan</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-book-reader"></i>
+            <span>PERPUSTAKAAN SEKOLAH</span>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="buku.html"><i class="fas fa-book"></i> Data Buku</a></li>
+            <li><a href="anggota.html"><i class="fas fa-users"></i>Anggota</a></li>
+            <li><a href="peminjaman.html" class="active"><i class="fas fa-exchange-alt"></i>Peminjaman</a></li>
+            <li class="logout-item"><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header class="content-header">
+            <h4>Data Peminjaman</h4>
+            <div class="user-profile">
+                <span><strong>Admin</strong></span>
+                <img src="https://ui-avatars.com/api/?name=Admin&background=198754&color=fff" alt="avatar">
+            </div>
+        </header>
+        <a href="input_peminjaman.html" class="btn-input">
+    <i class="fas fa-plus"></i> Tambah Data Peminjaman</a>
+
+<table class="table-input">
+    <tr class="table-success">
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td><strong>#</strong></td>
+        <td>#</td>
+        <td>#</td>
+        <td>
+            <button onclick="prosesPengembalian(this)" class="btn-action btn-return">
+                <i class="fas fa-undo"></i> Pengembalian
+            </button>
+            <button onclick="hapus(this)" class="btn-action btn-delete">
+                <i class="fas fa-trash"></i> Hapus
+            </button>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td><strong>#</strong></td>
+        <td>#</td>
+        <td>#</td>
+        <td>
+            <button onclick="prosesPengembalian(this)" class="btn-action btn-return">
+                <i class="fas fa-undo"></i> Pengembalian
+            </button>
+             <button onclick="hapus(this)" class="btn-action btn-delete">
+                <i class="fas fa-trash"></i> Hapus
+            </button>
+        </td>
+    </tr>
+</table>
+<script>
+    function prosesPengembalian(pesan,id) {
+        if(confirm(pesan)){
+            window.location.href = '?halaman=proses_pemengembalian&id='+id+'&buku='+id;
+        }
+    }
+    function hapus(pesan,id) {
+        if(confirm(pesan)){
+            window.location.href = '?halaman=hapus&id='+id+'&buku='+id;
+        }
+    }
+</script>
+    </div>
+</body>
+</html>

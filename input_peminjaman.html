@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Peminjaman</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+    <div class="form-container">
+    <div class="form-header">
+        <h4><i class="fas fa-book-medical me-2"></i>Tambah Data Peminjaman</h4>
+    </div>
+    <form method="post" action="#" class="mt-3">
+        <div class="mb-3">
+            <label>Pilih Anggota Perpustakaan</label>
+            <select name="id_anggota" class="form-control" required>
+                <option value="">Cari Nama Anggota</option>
+            </select>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label>Pilih Buku yang Dipinjam</label>
+            <select name="id_buku" class="form-control" required>
+                <option value="">Cari Judul Buku</option>
+            </select>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label>Waktu Peminjaman</label>
+            <input type="datetime-local" name="tgl_pinjam" class="form-control" required>
+        </div>
+            
+            <button type="submit" name="tombol" class="btn-save" onclick="alert('Data Peminjam Berhasil Disimpan')">
+                <i class="fas fa-save me-2"></i> Simpan </button>
+            <a href="?halaman=peminjaman" class="btn-cancel">Batal</a>
+    </form>
+</div>
+</body>
+</html>

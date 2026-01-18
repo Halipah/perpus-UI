@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Halaman Anggota | Perpustakaan</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-book-reader"></i>
+            <span>PERPUSTAKAAN SEKOLAH</span>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="dashboard_anggota.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="history.html"><i class="fas fa-book"></i> History Peminjaman </a></li>
+            <li class="logout-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+    <div class="content-header-text">
+        <h4 class="welcome-user">
+            <i class="fas fa-hand-wave me-2" style="color: #ffbd33;"></i> 
+            Selamat Datang, <span><?= $_SESSION['nama_anggota'];?></span>
+        </h4>
+        <h4 class="section-title">
+            <i class="fas fa-book-open me-2"></i> Koleksi Buku Terbaru
+        </h4>
+        <hr>
+    </div>
+    <h3>Daftar Buku yang di Pinjam</h3>
+    <table class="table-input">
+    <tr class="table-success">
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+        <td>#</td>
+    </tr>
+    <tr>
+        <td>#</td>
+        <td><strong>#</strong></td>
+        <td>#</td>
+        <td>#</td>
+        <td>
+            <button onclick="prosesPengembalian(this)" class="btn-action btn-return">
+                <i class="fas fa-undo"></i> Pengembalian
+            </button>
+        </td>
+    </tr>
+</table>
+    <div class="book-grid">
+        <div class="card-book">
+            <div class="book-icon"><i class="fas fa-book"></i></div>
+            <h1>The Art</h1>
+            <div class="book-info">
+                <p><strong>Pengarang:</strong></p>
+                <p><strong>Penerbit:</strong></p>
+                <p><strong>Tahun Terbit:</strong></p>
+            </div>
+            <span class="badge badge-success">Tersedia</span>
+            <a onclick="pinjam('this')" class="btn-pinjam">Pinjam Buku</a>
+        </div>
+        <div class="card-book">
+            <div class="book-icon"><i class="fas fa-book"></i></div>
+            <h1>Laskar Pelangi</h1>
+            <div class="book-info">
+                <p><strong>Pengarang:</strong>#</p>
+                <p><strong>Penerbit:</strong>#</p>
+                <p><strong>Tahun Terbit:</strong>#</p>
+            </div>
+            <span class="badge badge-danger">Tidak Tersedia</span>
+            <a class="btn-pinjam disabled">Pinjam Buku</a>
+        </div>
+    </div>
+</div>
+<script>
+    function pinjam(pesan,id) {
+        if(confirm(pesan)){
+            window.location.href = '?halaman=pinjam&id=' +id;
+        }
+    }
+    function pengembalian(pesan,id) {
+        if(confirm(pesan)){
+            window.location.href = '?halaman=pengembalian&id=' +id;
+        }
+    }
+</script>
+</body>
+</html>
